@@ -2,8 +2,10 @@ package chess;
 
 import boardgame.Board;
 import boardgame.Piece;
+import boardgame.Position;
 
-public class ChessPiece extends Piece{
+
+public abstract class ChessPiece extends Piece{
 	
 	private Color color;
 
@@ -16,11 +18,11 @@ public class ChessPiece extends Piece{
 		return color;
 	}
 
-	@Override
-	public boolean[][] possibleMoves() {
-		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		return mat;
+	protected boolean isThereOpponentPiece(Position position) {
+		ChessPiece p = (ChessPiece)getBoard().piece(position);
+		return p != null && p.getColor() != color;
 	}
+	
 	
 	
 }
