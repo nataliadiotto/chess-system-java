@@ -67,7 +67,7 @@ public class UI {
 			}
 			System.out.println();
 		}
-		System.out.print("  a b c d e f g h");
+		System.out.print("  a b c d e f g h"); 
 	}
 	
 	private static void printPiece(ChessPiece piece, boolean background) { //imprimir UMA peça
